@@ -20,17 +20,42 @@ function createGallery (images) {
            </a>
         </div> `;
     })
-    .join('');
-   
+    .join('');  
 }
 
-
-container.addEventListener("click", onClick);
 
 function onClick(event) {
     event.preventDefault();
 
-    //    console.log(event.target);
+    if (event.target.nodeName !== "IMG") return;
+    const originalUrl = event.target.dataset.source;
+
+    const instance = basicLightbox.create(`
+    <img src=${originalUrl}>
+     `)
+      instance.show();
+};
+
+container.addEventListener("click", onClick);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //    console.log(event.target);
 
     // const currentActiveLink = document.querySelector('.tagd__link__active');
     // console.log(currentActiveLink);
@@ -40,8 +65,3 @@ function onClick(event) {
     //     currentActiveLink.classList.remove('tagd__link__active');
     //    };
 
-};
-
-
-
-//console.log(galleryItems);
