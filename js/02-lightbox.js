@@ -23,16 +23,8 @@ function createGallery (images) {
     .join('');  
 }
 
-// function onClick(event) {
-//     // event.preventDefault();
-// };
+    const gallery = new SimpleLightbox('.gallery a', {captionsData: 'alt'});
 
-// container.addEventListener("click", onClick);
-
-container.addEventListener("click", () => {});
-
-
-const gallery = new SimpleLightbox('.gallery a', {captionsData: `alt`});
-    gallery.next();
+    // container.addEventListener("click", gallery.next());
 
 
