@@ -15,6 +15,7 @@ function createGallery (images) {
                src="${preview}"
                data-source="${original}"
                alt="${description}"
+               
             />
            </a>
          `;
@@ -22,12 +23,14 @@ function createGallery (images) {
     .join('');  
 }
 
-
 function onClick(event) {
     event.preventDefault();
-
-
 };
 
 container.addEventListener("click", onClick);
-// console.log(galleryItems);
+
+
+var gallery = new SimpleLightbox('.gallery a', {captionsData: `alt`});
+    gallery.next();
+
+
