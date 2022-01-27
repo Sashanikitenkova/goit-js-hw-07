@@ -32,8 +32,13 @@ function onClick(event) {
 
     const instance = basicLightbox.create(`
     <img src=${originalUrl}>
-     `)
+     `);
       instance.show();
+
+    //   if (event.key === 'Escape') {
+    //     instance.close();
+    //   };
+     
 };
 
 container.addEventListener("click", onClick);
