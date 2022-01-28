@@ -23,7 +23,6 @@ function createGallery (images) {
     .join('');  
 }
 
-
 function onClick(event) {
     event.preventDefault();
 
@@ -33,12 +32,14 @@ function onClick(event) {
     const instance = basicLightbox.create(`
     <img src=${originalUrl}>
      `);
-      instance.show();
+      instance.show(); 
 
-    //   if (event.key === 'Escape') {
-    //     instance.close();
-    //   };
-     
+      document.addEventListener("keydown", event => {
+
+        if (event.key === 'Escape') {
+          instance.close();
+        };
+      });
 };
 
 container.addEventListener("click", onClick);
